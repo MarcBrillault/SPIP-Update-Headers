@@ -1,0 +1,40 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+	<form method="post" action="#ENV{action}">
+		<div>
+			#ACTION_FORMULAIRE{#ENV{action}}
+			<ul>
+				[(#SAISIE{
+					input,
+					default_replace,
+					label=<:updateheaders:label_defaultreplace:>,
+					explication=<:updateheaders:explication_defaultreplace:>
+				})]
+				
+				[(#SAISIE{
+					case,
+					masquer_powered,
+					label=<:updateheaders:label_masquerpowered:>
+				})]
+				
+				[(#SAISIE{
+					case,
+					masquer_composed,
+					label=<:updateheaders:label_masquercomposed:>
+				})]
+				
+				[(#SAISIE{
+					textarea,
+					advanced,
+					label=<:updateheaders:label_advanced:>,
+					explication=<:updateheaders:explication_advanced:>
+				})]
+			</ul>
+			<p class="boutons">
+				<span class="image_loading">&nbsp;</span>
+				<input type="submit" class="submit" value='<:bouton_enregistrer:>' />
+			</p>
+		</div>
+	</form>
+</div>
